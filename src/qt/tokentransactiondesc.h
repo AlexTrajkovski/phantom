@@ -1,5 +1,5 @@
-#ifndef QTUM_QT_TOKENTRANSACTIONDESC_H
-#define QTUM_QT_TOKENTRANSACTIONDESC_H
+#ifndef XPTg_QT_TOKENTRANSACTIONDESC_H
+#define XPTg_QT_TOKENTRANSACTIONDESC_H
 
 #include <QObject>
 #include <QString>
@@ -24,4 +24,4 @@ private:
     static QString FormatTxStatus(CWallet *wallet, const CTokenTx& wtx);
 };
 
-#endif // QTUM_QT_TOKENTRANSACTIONDESC_H
+#endif // XPTg_QT_TOKENTRANSACTIONDESC_H

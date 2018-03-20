@@ -1,21 +1,21 @@
 
 Debian
 ====================
-This directory contains files used to package qtumd/qtum-qt
-for Debian-based Linux systems. If you compile qtumd/qtum-qt yourself, there are some useful files here.
+This directory contains files used to package phantomd/phantom-qt
+for Debian-based Linux systems. If you compile phantomd/phantom-qt yourself, there are some useful files here.
 
-## qtum: URI support ##
+## phantom: URI support ##
 
 
-qtum-qt.desktop  (Gnome / Open Desktop)
+phantom-qt.desktop  (Gnome / Open Desktop)
 To install:
 
-	sudo desktop-file-install qtum-qt.desktop
+	sudo desktop-file-install phantom-qt.desktop
 	sudo update-desktop-database
 
 If you build yourself, you will either need to modify the paths in
-the .desktop file or copy or symlink your qtum-qt binary to `/usr/bin`
+the .desktop file or copy or symlink your phantom-qt binary to `/usr/bin`
 and the `../../share/pixmaps/bitcoin128.png` to `/usr/share/pixmaps`
 
-qtum-qt.protocol (KDE)
+phantom-qt.protocol (KDE)
 

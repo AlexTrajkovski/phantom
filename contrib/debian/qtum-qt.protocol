@@ -1,6 +1,6 @@
 [Protocol]
-exec=qtum-qt '%u'
-protocol=qtum
+exec=phantom-qt '%u'
+protocol=phantom
 input=none
 output=none
 helper=true

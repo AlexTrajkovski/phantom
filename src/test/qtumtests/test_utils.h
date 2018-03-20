@@ -5,15 +5,15 @@
 #include <test/test_bitcoin.h>
 #include <boost/filesystem/operations.hpp>
 
-extern std::unique_ptr<QtumState> globalState;
+extern std::unique_ptr<PhantomState> globalState;
 
 void initState();
 
 CBlock generateBlock();
 
-dev::Address createQtumAddress(dev::h256 hashTx, uint32_t voutNumber);
+dev::Address createPhantomAddress(dev::h256 hashTx, uint32_t voutNumber);
 
-QtumTransaction createQtumTransaction(valtype data, dev::u256 value, dev::u256 gasLimit, dev::u256 gasPrice,
+PhantomTransaction createPhantomTransaction(valtype data, dev::u256 value, dev::u256 gasLimit, dev::u256 gasPrice,
     dev::h256 hashTransaction, dev::Address recipient, int32_t nvout = 0);
 
-std::pair<std::vector<ResultExecute>, ByteCodeExecResult> executeBC(std::vector<QtumTransaction> txs);
+std::pair<std::vector<ResultExecute>, ByteCodeExecResult> executeBC(std::vector<PhantomTransaction> txs);

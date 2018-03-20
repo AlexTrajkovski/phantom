@@ -70,18 +70,19 @@ TestingSetup::TestingSetup(const std::string& chainName) : BasicTestingSetup(cha
         pcoinsdbview = new CCoinsViewDB(1 << 23, true);
         pcoinsTip = new CCoinsViewCache(pcoinsdbview);
 
-////////////////////////////////////////////////////////////// qtum
+////////////////////////////////////////////////////////////// phantom
         dev::eth::Ethash::init();		
         boost::filesystem::path pathTemp = GetTempPath() / strprintf("test_bitcoin_%lu_%i", (unsigned long)GetTime(), (int)(GetRand(100000)));
         boost::filesystem::create_directories(pathTemp);
         const dev::h256 hashDB(dev::sha3(dev::rlp("")));
-        globalState = std::unique_ptr<QtumState>(new QtumState(dev::u256(0), QtumState::openDB(pathTemp.string(), hashDB, dev::WithExisting::Trust), pathTemp.string(), dev::eth::BaseState::Empty));
-        dev::eth::ChainParams cp((dev::eth::genesisInfo(dev::eth::Network::qtumTestNetwork)));
+        globalState = std::unique_ptr<PhantomState>(new PhantomState(dev::u256(0), PhantomState::openDB(pathTemp.string(), hashDB, dev::WithExisting::Trust), pathTemp.string(), dev::eth::BaseState::Empty));
+        dev::eth::ChainParams cp((dev::eth::genesisInfo(dev::eth::Network::phantomTestNetwork)));
         globalSealEngine = std::unique_ptr<dev::eth::SealEngineFace>(cp.createSealEngine());
         globalState->populateFrom(cp.genesisState);
         globalState->setRootUTXO(uintToh256(chainparams.GenesisBlock().hashUTXORoot));
         globalState->db().commit();
         globalState->dbUtxo().commit();
+        pstorageresult = new StorageResults(pathTemp.string());
 //////////////////////////////////////////////////////////////
 
         InitBlockIndex(chainparams);
@@ -108,7 +109,7 @@ TestingSetup::~TestingSetup()
         delete pcoinsdbview;
         delete pblocktree;
 
-/////////////////////////////////////////////// // qtum
+/////////////////////////////////////////////// // phantom
         delete globalState.release();
         globalSealEngine.reset();
 ///////////////////////////////////////////////

@@ -76,7 +76,7 @@ for arg in sys.argv[1:]:
 
 #Set env vars
 if "BITCOIND" not in os.environ:
-    os.environ["BITCOIND"] = BUILDDIR + '/src/qtumd' + EXEEXT
+    os.environ["BITCOIND"] = BUILDDIR + '/src/phantomd' + EXEEXT
 
 if EXEEXT == ".exe" and "-win" not in opts:
     # https://github.com/bitcoin/bitcoin/commit/d52802551752140cf41f0d9a225a43e84404d3e9
@@ -159,37 +159,37 @@ testScripts = [
     'listsinceblock.py',
     'p2p-leaktests.py',
 
-    #qtum
-    'qtum-8mb-block.py',
-    'qtum-dgp-gas-price-lingering-mempool-tx.py',
-    'qtum-opcreate.py',
-    'qtum-block-header.py',
-    'qtum-dgp.py',
-    'qtum-pos.py',
-    'qtum-callcontract.py',
-    'qtum-gas-limit.py',
-    'qtum-pos-segwit.py',
-    'qtum-combined-outputs-exceed-gas-limit.py',
-    'qtum-globals-state-changer.py',
-    'qtum-sendtocontract.py',
-    'qtum-condensing-txs.py',
-    'qtum-identical-refunds.py',
-    'qtum-soft-block-gas-limits.py',
-    'qtum-createcontract.py',
-    'qtum-many-value-refunds-from-same-tx.py',
-    'qtum-spend-op-call.py',
-    'qtum-create-eth-op-code.py',
-    'qtum-no-exec-call-disabled.py',
-    'qtum-state-root.py',
-    'qtum-dgp-block-size-restart.py',
-    'qtum-null-sender.py',
-    'qtum-transaction-prioritization.py',
-    'qtum-dgp-block-size-sync.py',
-    'qtum-opcall.py',
-    'qtum-assign-mpos-fees-to-gas-refund.py',
-    'qtum-gas-limit-overflow.py',
-    'qtum-immature-coinstake-spend.py',
-    'qtum-ignore-mpos-participant-reward.py',
+    #phantom
+    'phantom-8mb-block.py',
+    'phantom-dgp-gas-price-lingering-mempool-tx.py',
+    'phantom-opcreate.py',
+    'phantom-block-header.py',
+    'phantom-dgp.py',
+    'phantom-pos.py',
+    'phantom-callcontract.py',
+    'phantom-gas-limit.py',
+    'phantom-pos-segwit.py',
+    'phantom-combined-outputs-exceed-gas-limit.py',
+    'phantom-globals-state-changer.py',
+    'phantom-sendtocontract.py',
+    'phantom-condensing-txs.py',
+    'phantom-identical-refunds.py',
+    'phantom-soft-block-gas-limits.py',
+    'phantom-createcontract.py',
+    'phantom-many-value-refunds-from-same-tx.py',
+    'phantom-spend-op-call.py',
+    'phantom-create-eth-op-code.py',
+    'phantom-no-exec-call-disabled.py',
+    'phantom-state-root.py',
+    'phantom-dgp-block-size-restart.py',
+    'phantom-null-sender.py',
+    'phantom-transaction-prioritization.py',
+    'phantom-dgp-block-size-sync.py',
+    'phantom-opcall.py',
+    'phantom-assign-mpos-fees-to-gas-refund.py',
+    'phantom-gas-limit-overflow.py',
+    'phantom-immature-coinstake-spend.py',
+    'phantom-ignore-mpos-participant-reward.py',
 ]
 
 

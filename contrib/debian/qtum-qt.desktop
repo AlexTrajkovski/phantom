@@ -1,10 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Bitcoin Core
-Comment=Connect to the Qtum P2P Network
-Exec=qtum-qt %u
+Comment=Connect to the Phantom P2P Network
+Exec=phantom-qt %u
 Terminal=false
 Type=Application
-Icon=qtum128
-MimeType=x-scheme-handler/qtum;
+Icon=phantom128
+MimeType=x-scheme-handler/phantom;
 Categories=Office;Finance;

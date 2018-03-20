@@ -1,4 +1,4 @@
-#include <qtum/storageresults.h>
+#include <phantom/storageresults.h>
 
 StorageResults::StorageResults(std::string const& _path){
 	path = _path + "/resultsDB";
@@ -16,6 +16,10 @@ StorageResults::~StorageResults()
 
 void StorageResults::addResult(dev::h256 hashTx, std::vector<TransactionReceiptInfo>& result){
 	m_cache_result.insert(std::make_pair(hashTx, result));
+}
+
+void StorageResults::clearCacheResult(){
+    m_cache_result.clear();
 }
 
 void StorageResults::wipeResults(){

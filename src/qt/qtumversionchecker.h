@@ -1,9 +1,9 @@
-#ifndef QTUMVERSIONCHECKER_H
-#define QTUMVERSIONCHECKER_H
+#ifndef XPTgVERSIONCHECKER_H
+#define XPTgVERSIONCHECKER_H
 
 #include <QObject>
 
-#define QTUM_RELEASES "https://github.com/qtumproject/qtum/releases"
+#define XPTg_RELEASES "https://github.com/phantomproject/phantom/releases"
 
 class Version {
 
@@ -81,12 +81,12 @@ public:
     }
 };
 
-class QtumVersionChecker : public QObject
+class PhantomVersionChecker : public QObject
 {
     Q_OBJECT
 public:
-    explicit QtumVersionChecker(QObject *parent = 0);
-    ~QtumVersionChecker();
+    explicit PhantomVersionChecker(QObject *parent = 0);
+    ~PhantomVersionChecker();
 
     bool newVersionAvailable();
 
@@ -97,4 +97,4 @@ private:
     Version currentVersion;
 };
 
-#endif // QTUMVERSIONCHECKER_H
+#endif // XPTgVERSIONCHECKER_H

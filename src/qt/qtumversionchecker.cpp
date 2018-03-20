@@ -1,4 +1,4 @@
-#include "qtumversionchecker.h"
+#include "phantomversionchecker.h"
 #include "../clientversion.h"
 
 #include <boost/foreach.hpp>
@@ -10,19 +10,19 @@
 #include <QRegularExpression>
 #include <QRegularExpressionMatchIterator>
 
-#define paternVersion "qtum-([0-9]+\\.)?([0-9]+\\.)?([0-9]+)-"
+#define paternVersion "phantom-([0-9]+\\.)?([0-9]+\\.)?([0-9]+)-"
 
-QtumVersionChecker::QtumVersionChecker(QObject *parent) : QObject(parent)
+PhantomVersionChecker::PhantomVersionChecker(QObject *parent) : QObject(parent)
 {
     currentVersion = Version(CLIENT_VERSION_MAJOR, CLIENT_VERSION_MINOR, CLIENT_VERSION_REVISION);
 }
 
-QtumVersionChecker::~QtumVersionChecker()
+PhantomVersionChecker::~PhantomVersionChecker()
 {
 
 }
 
-bool QtumVersionChecker::newVersionAvailable()
+bool PhantomVersionChecker::newVersionAvailable()
 {
     Version maxReleaseVersion = getMaxReleaseVersion();
 
@@ -36,10 +36,10 @@ bool QtumVersionChecker::newVersionAvailable()
     }
 }
 
-QList<Version> QtumVersionChecker::getVersions()
+QList<Version> PhantomVersionChecker::getVersions()
 {
     QNetworkAccessManager manager;
-    QNetworkReply *response = manager.get(QNetworkRequest(QUrl(QTUM_RELEASES)));
+    QNetworkReply *response = manager.get(QNetworkRequest(QUrl(XPTg_RELEASES)));
     QEventLoop event;
     connect(response, SIGNAL(finished()), &event, SLOT(quit()));
     event.exec();
@@ -62,7 +62,7 @@ QList<Version> QtumVersionChecker::getVersions()
     return versions;
 }
 
-Version QtumVersionChecker::getMaxReleaseVersion()
+Version PhantomVersionChecker::getMaxReleaseVersion()
 {
     QList<Version> versions = getVersions();
     Version maxVersion;
