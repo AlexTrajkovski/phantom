@@ -1,3 +1,3 @@
 [submodule "src/cpp-ethereum"]
 	path = src/cpp-ethereum
-	url = https://github.com/phantomproject/cpp-eth-phantom.git
+	url = https://github.com/PhantomBlockchain/cpp-eth-phantom.git
