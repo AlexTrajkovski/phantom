@@ -81,7 +81,7 @@ public:
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 985500; // phantom halving every 4 years
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x000075aef83cf2853580f8ae8ce6f8c3096cfa21d98334d6e3f95e5582ed986c");
+        consensus.BIP34Hash = uint256S("0x34eb9a51549f2ba091d3b85dba5f75c0bb40b5643f4e7f4f85cf7080f277e41f");
         consensus.BIP65Height = 0; // 000000000000000004c2b624ed5d7756c508d90fd0da2c7c679febfa6c4735f0
         consensus.BIP66Height = 0; // 00000000000000000379eaa19dce8c9b722d46ae6a57c2f1a988119488b50931
         consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -109,10 +109,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 999999999999ULL;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000036a70ae675b98824c5"); // phantom
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000000000000004c5"); // phantom
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xbfbbfc2c3be3d4e085082aff2e4e73a4e21dbf6205bc41b84b38ffac0a8bc114"); //453354
+        consensus.defaultAssumeValid = uint256S("0x34eb9a51549f2ba091d3b85dba5f75c0bb40b5643f4e7f4f85cf7080f277e41f"); //453354
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -128,11 +128,21 @@ public:
 
         genesis = CreateGenesisBlock(1521642427, 8026361, 0x1f00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x"));
-        assert(genesis.hashMerkleRoot == uint256S("0x"));
+        
+        printf("consensus.hashGenesisBlock");
+     //   fprintf("debug.log","%s",consensus.hashGenesisBlock);
+
+        printf("%s\n",consensus.hashGenesisBlock.ToString().c_str());
+
+        printf("consensus.hashMerkleRoot");
+
+        printf("%s\n",genesis.hashMerkleRoot.ToString().c_str());
+
+        assert(consensus.hashGenesisBlock == uint256S("0x34eb9a51549f2ba091d3b85dba5f75c0bb40b5643f4e7f4f85cf7080f277e41f"));
+        assert(genesis.hashMerkleRoot == uint256S("0x08ee19fce2f0e9f9c95007f785ae4cfeeabb3779f75026561c665fe2324b4657"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.push_back(CDNSSeedData("phantom3.dynu.net", "phantom3.dynu.net", false)); // Phantom mainnet
+        vSeeds.push_back(CDNSSeedData("phantom3.dynu.net", "127.0.0.1", false)); // Phantom mainnet
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,58);
@@ -150,7 +160,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 0, uint256S("0x"))
+            ( 0, uint256S("0x34eb9a51549f2ba091d3b85dba5f75c0bb40b5643f4e7f4f85cf7080f277e41f"))
             // ( 5000, uint256S("00006a5338e5647872bd91de1d291365e941e14dff1939b5f16d1804d1ce61cd")) //last PoW block
             // ( 45000, uint256S("060c6af680f6975184c7a17059f2ff4970544fcfd4104e73744fe7ab7be14cfc"))
             // ( 90000, uint256S("66fcf426b0aa6f2c9e3330cb2775e9e13c4a2b8ceedb50f8931ae0e12078ad50"))
@@ -183,7 +193,7 @@ public:
         strNetworkID = "test";
         consensus.nSubsidyHalvingInterval = 985500; // phantom halving every 4 years
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x0000e803ee215c0684ca0d2f9220594d3f828617972aad66feb2ba51f5e14222");
+    //    consensus.BIP34Hash = uint256S("0x0000e803ee215c0684ca0d2f9220594d3f828617972aad66feb2ba51f5e14222");
         consensus.BIP65Height = 0; // 00000000007f6655f22f98e72ed80d8b06dc761d5da09df0fa1dc4be4f861eb6
         consensus.BIP66Height = 0; // 000000002104c8c45e99a8853285a3b592602a3ccde2b832481da85e9e4ba182
         consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -211,10 +221,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 999999999999ULL;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000d6e528bcf5a3a556f"); // phantom
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000000000ffff"); // phantom
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x39ffa0c5924550db0e75030ff8513c3145d491dff2e17b8e3ea1cea7b4662ff0"); //1079274
+        consensus.defaultAssumeValid = uint256S("0xe6665e8f43c9d7604e1a6e8273df66009cca4082323c29fdc5098f2878fda306"); //1079274
 
         pchMessageStart[0] = 0xd2;
         pchMessageStart[1] = 0xc3;
@@ -225,14 +235,25 @@ public:
 
         genesis = CreateGenesisBlock(1521642427, 7349697, 0x1f00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x"));
-        assert(genesis.hashMerkleRoot == uint256S("0x"));
+
+        printf("consensus.hashGenesisBlock");
+     //   fprintf("debug.log","%s",consensus.hashGenesisBlock);
+
+        printf("%s\n",consensus.hashGenesisBlock.ToString().c_str());
+
+        printf("consensus.hashMerkleRoot");
+
+        printf("%s\n",genesis.hashMerkleRoot.ToString().c_str());
+
+
+        assert(consensus.hashGenesisBlock == uint256S("0xe6665e8f43c9d7604e1a6e8273df66009cca4082323c29fdc5098f2878fda306"));
+        assert(genesis.hashMerkleRoot == uint256S("0x08ee19fce2f0e9f9c95007f785ae4cfeeabb3779f75026561c665fe2324b4657"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
         //vSeeds.push_back(CDNSSeedData("phantom4.dynu.net", "phantom4.dynu.net", false)); // Phantom testnet
-        vSeeds.push_back(CDNSSeedData("phantom.org", "myip", false)); // Phantom testnet
+        vSeeds.push_back(CDNSSeedData("phantom.org", "127.0.0.1", false)); // Phantom testnet
 
 
 
@@ -252,7 +273,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 0, uint256S("0x"))
+            ( 0, uint256S("0xe6665e8f43c9d7604e1a6e8273df66009cca4082323c29fdc5098f2878fda306"))
             // ( 5000, uint256S("000000302bc22f2f65995506e757fff5c824545db5413e871d57d27a0997e8a0")) //last PoW block
             // ( 77000, uint256S("f41e2e8d09bca38827c23cad46ed6d434902da08415d2314d0c8ce285b1970cb"))
         };
@@ -321,8 +342,21 @@ public:
 
         genesis = CreateGenesisBlock(1504695029, 17, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x"));
-        assert(genesis.hashMerkleRoot == uint256S("0x"));
+     
+
+        printf("consensus.hashGenesisBlock");
+     //   fprintf("debug.log","%s",consensus.hashGenesisBlock);
+
+        printf("%s\n",consensus.hashGenesisBlock.ToString().c_str());
+
+        printf("consensus.hashMerkleRoot");
+
+        printf("%s\n",genesis.hashMerkleRoot.ToString().c_str());
+
+
+
+        assert(consensus.hashGenesisBlock == uint256S("0xffec22819b34cb285adad84a2d4fe5ce03dd48bdf27cb1db3e006c4dbbd2bb88"));
+        assert(genesis.hashMerkleRoot == uint256S("0x08ee19fce2f0e9f9c95007f785ae4cfeeabb3779f75026561c665fe2324b4657"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -334,7 +368,7 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("0x"))
+            ( 0, uint256S("0xffec22819b34cb285adad84a2d4fe5ce03dd48bdf27cb1db3e006c4dbbd2bb88"))
         };
 
         chainTxData = ChainTxData{
