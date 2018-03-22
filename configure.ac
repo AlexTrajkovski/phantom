@@ -216,7 +216,7 @@ if test "x$enable_debug" = xyes; then
     fi
 fi
 
-CPPFLAGS="$CPPFLAGS -DXPTg_BUILD"
+CPPFLAGS="$CPPFLAGS -DXPT_BUILD"
 
 ERROR_CXXFLAGS=
 if test "x$enable_werror" = "xyes"; then

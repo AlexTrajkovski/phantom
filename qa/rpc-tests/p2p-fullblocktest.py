@@ -844,7 +844,7 @@ class FullBlockTest(ComparisonTestFramework):
         # the second one should be rejected.
         #
 
-        # XPTg: Since we enable BIP34 from block 0, this BIP30 test is no longer relevant. This test has therefore been removed.
+        # XPT: Since we enable BIP34 from block 0, this BIP30 test is no longer relevant. This test has therefore been removed.
         # See https://github.com/phantomproject/phantom_new/blob/master/src/validation.cpp#L1809
         #tip(60)
         #b61 = block(61, spend=out[18])

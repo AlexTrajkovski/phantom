@@ -1,5 +1,5 @@
-#ifndef XPTgDGP_H
-#define XPTgDGP_H
+#ifndef XPTDGP_H
+#define XPTDGP_H
 
 #include "phantomstate.h"
 #include "primitives/block.h"

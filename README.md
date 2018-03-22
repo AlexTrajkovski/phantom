@@ -34,7 +34,7 @@ Development resources:
 * [Deploying a custom token to Phantom](https://blog.phantom.org/phantom-custom-token-walkthrough-467d725fa27d)
 * [Early example faucet contract](http://earlz.net/view/2017/06/30/2144/the-phantom-sparknet-faucet)
 * [Unofficial Phantom Hello World tutorial](https://steemit.com/phantom/@cryptominder/quantum-phantom-blockchain-developer-tutorial-hello-world)
-* [Phantom Book - A Developer's Guide To XPTg](https://github.com/phantomproject/phantombook)
+* [Phantom Book - A Developer's Guide To XPT](https://github.com/phantomproject/phantombook)
 
 General Info about Phantom:
 
@@ -56,7 +56,7 @@ Developer's Tools
   * https://github.com/phantomproject/phantomportal
 * Docker images for running phantom services
   * https://github.com/phantomproject/phantom-docker
-* HTTP API that powers the block explorer and the XPTg web wallet
+* HTTP API that powers the block explorer and the XPT web wallet
   * https://github.com/phantomproject/insight-api
 
 

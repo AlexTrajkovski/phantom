@@ -1,9 +1,9 @@
-#ifndef XPTgVERSIONCHECKER_H
-#define XPTgVERSIONCHECKER_H
+#ifndef XPTVERSIONCHECKER_H
+#define XPTVERSIONCHECKER_H
 
 #include <QObject>
 
-#define XPTg_RELEASES "https://github.com/phantomproject/phantom/releases"
+#define XPT_RELEASES "https://github.com/phantomproject/phantom/releases"
 
 class Version {
 
@@ -97,4 +97,4 @@ private:
     Version currentVersion;
 };
 
-#endif // XPTgVERSIONCHECKER_H
+#endif // XPTVERSIONCHECKER_H

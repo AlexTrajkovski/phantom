@@ -1,5 +1,5 @@
-#ifndef XPTgTRANSACTION_H
-#define XPTgTRANSACTION_H
+#ifndef XPTTRANSACTION_H
+#define XPTTRANSACTION_H
 
 #include <libethcore/Transaction.h>
 

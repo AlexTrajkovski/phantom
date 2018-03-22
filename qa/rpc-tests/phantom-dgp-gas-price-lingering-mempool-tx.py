@@ -63,7 +63,7 @@ class PhantomDGPGasPriceLingeringMempoolTxTest(BitcoinTestFramework):
         # until they connect later on
         stop_node(self.nodes[1], 1)
         self.nodes[1] = start_node(1, self.options.tmpdir)
-        self.nodes[1].createcontract("00", 1000000, XPTg_MIN_GAS_PRICE_STR)
+        self.nodes[1].createcontract("00", 1000000, XPT_MIN_GAS_PRICE_STR)
 
         # Set the minimum gas price to 100
         self.create_proposal_contract(100)

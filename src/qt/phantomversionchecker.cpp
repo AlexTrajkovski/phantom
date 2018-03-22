@@ -39,7 +39,7 @@ bool PhantomVersionChecker::newVersionAvailable()
 QList<Version> PhantomVersionChecker::getVersions()
 {
     QNetworkAccessManager manager;
-    QNetworkReply *response = manager.get(QNetworkRequest(QUrl(XPTg_RELEASES)));
+    QNetworkReply *response = manager.get(QNetworkRequest(QUrl(XPT_RELEASES)));
     QEventLoop event;
     connect(response, SIGNAL(finished()), &event, SLOT(quit()));
     event.exec();

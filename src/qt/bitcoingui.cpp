@@ -296,7 +296,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
 
     if(fCheckForUpdates && phantomVersionChecker->newVersionAvailable())
     {
-        QString link = QString("<a href=%1>%2</a>").arg(XPTg_RELEASES, XPTg_RELEASES);
+        QString link = QString("<a href=%1>%2</a>").arg(XPT_RELEASES, XPT_RELEASES);
         QString message(tr("New version of Phantom wallet is available on the Phantom source code repository: <br /> %1. <br />It is recommended to download it and update this application").arg(link));
         QMessageBox::information(this, tr("Check for updates"), message);
     }
