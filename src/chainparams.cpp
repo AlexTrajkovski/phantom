@@ -236,7 +236,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0xebdbf2644788656f757968d90571c36dc53817ec6b7c6ecbb8604d49ab493c66"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.push_back(CDNSSeedData("phantom.phantom.org", "127.0.0.1", false)); // Phantom mainnet
+        vSeeds.push_back(CDNSSeedData("phantom.org", "127.0.0.1", false)); // Phantom mainnet
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,58);
@@ -250,7 +250,7 @@ public:
         fMiningRequiresPeers = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
-        fMineBlocksOnDemand = false;
+        fMineBlocksOnDemand = true;
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
