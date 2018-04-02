@@ -142,7 +142,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x14f3f948fe0b4ec1105d5308973755378d85aa805fd942f3403eb4c367ac28cd"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.push_back(CDNSSeedData("dnsseed.phantomcore.net" , "45.32.235.234", false)); // Phantom mainnet
+        vSeeds.push_back(CDNSSeedData("dnsseed.phantomcore.net" , "dnsseed.phantomcore.net", false)); // Phantom mainnet
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,55); //was 58
